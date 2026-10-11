@@ -366,6 +366,8 @@ a:focus-visible {
   min-height: 28rem;
 }
 
+/* Reservation section */
+
 .reservations {
   position: relative;
   isolation: isolate;
@@ -387,7 +389,6 @@ a:focus-visible {
   object-position: center;
 }
 
-/* Darken the image behind the text */
 .reservations::before {
   content: "";
   position: absolute;
@@ -436,6 +437,7 @@ a:focus-visible {
   line-height: 1.6;
 }
 
+/* Footer Section */
 .site-footer {
   background: var(--color-background);
   color: var(--color-text);
@@ -462,4 +464,66 @@ a:focus-visible {
 }
 .footer-logo{
     font-size: 1rem;
+}
+
+/* Phone */
+@media (max-width: 640px) {
+  .header-inner {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .main-nav {
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 0.75rem 1.25rem;
+  }
+  .food-menu {
+    padding-block: 3.5rem;
+  }
+
+  .menu-heading {
+    margin-bottom: 2.5rem;
+  }
+
+  .menu-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem;
+  }
+  .our-story {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .story-image{
+    min-height: 0;
+  }
+  .story-image img{
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+  }
+
+  .story-content {
+    padding: 2.5rem 1.25rem;
+  }
+
+  .reservations {
+    min-height: 0;
+    padding: 4rem 1.25rem;
+  }
+
+  .reservations::before {
+    background: var(--color-overlay-dark);
+  }
+
+  .reservations .reservation-content {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    width: 100%;
+    max-width: 32rem;
+    margin-inline: auto;
+    padding: 0;
+  }
 }
